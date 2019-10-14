@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/lixingyangok/practice-typescript/issues"
   },
-  "homepage": "https://github.com/lixingyangok/practice-typescript#readme"
+  "homepage": "https://github.com/lixingyangok/practice-typescript#readme",
+  "dependencies": {
+    "@types/node": "^12.7.12"
+  }
 }
