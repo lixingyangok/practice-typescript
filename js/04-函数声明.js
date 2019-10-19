@@ -1,4 +1,5 @@
 "use strict";
+// ▼参数要标注类型，也可定义默认值，
 function howOld(age, stature) {
     if (age === void 0) { age = 0; }
     var result = "\u4ECA\u5E74" + age + "\u5C81";

@@ -1,3 +1,4 @@
+// ▼参数要标注类型，也可定义默认值，
 function howOld( age:number=0, stature?:string, ):string {
     let result = `今年${age}岁`;
     if(stature) result+=`，而且身材${stature}`;
