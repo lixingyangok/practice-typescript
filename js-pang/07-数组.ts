@@ -1,4 +1,3 @@
-import { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } from "constants";
 
 let arr01:number[] = []; //声明一个【成员为数值】的数组
 arr01=[1,2,3]; //赋值一个【成员为数值的数组】可以
@@ -18,3 +17,12 @@ arr04.push( true );
 console.log( arr02 );
 console.log( arr03 );
 console.log( arr04 );
+
+let arr05:[number, string] = [1,'ok'];
+// arr05.push(true);//报错，不可以插入布尔值
+// arr05 = [ 'ok', 1 ]; //报错，数组成员顺序不正确
+
+
+// ▼任意类型的数组
+let arr06:Array<any> = [ 1,'ok', true ];
+arr06.push( alert );
