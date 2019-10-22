@@ -1,0 +1,1 @@
+let express01:RegExp = /name.+tom/ig;
