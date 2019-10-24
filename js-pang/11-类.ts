@@ -1,22 +1,16 @@
+
 class Girl{
     name:string;
     age:number;
-    constructor( info:object ){
-        // for( let [key, val] of Object.entries( info ) ){
-        //     console.log( key, ' = ', val );
-        //     this[key] = val;
-        // }
-        this.name = info.name;
-        this.age = info.age;
+    constructor( name:string, age:number ){
+        this.name = name;
+        this.age = age;
     }
     toIntroduce(){
         console.log( this.name, this.age );
     }
 }
 
-let girl01 = new Girl({
-    name: 'Rose',
-    age: 18,
-});
+let girl01 = new Girl( 'Sara', 18 );
 
 girl01.toIntroduce();
