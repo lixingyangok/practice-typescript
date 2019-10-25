@@ -1,7 +1,7 @@
 class Person{
     public sex:string;
-    protected readonly name:string; //只读
     private age:number; 
+    protected readonly name:string; //只读
 
     constructor( name:string, age:number, sex:string  ){
         this.name = name;

@@ -1,6 +1,6 @@
 
 class Girl{
-    name:string;
+    name:string; //定义数据类型
     age:number;
     constructor( name:string, age:number ){
         this.name = name;
