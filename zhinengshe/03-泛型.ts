@@ -1,4 +1,3 @@
-import { type } from "os";
 
 function getData<myType>( params:myType ):myType {
     // return `${params} + ${new Date().toLocaleString()}`;
