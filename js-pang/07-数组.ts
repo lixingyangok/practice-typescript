@@ -25,4 +25,6 @@ let arr05:[number, string] = [1,'ok'];
 
 // ▼任意类型的数组
 let arr06:Array<any> = [ 1,'ok', true ];
+let arr07:any[] = [ 1,'ok', true ];
 arr06.push( alert );
+arr07.push( alert );

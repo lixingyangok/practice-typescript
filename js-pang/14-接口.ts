@@ -15,11 +15,11 @@ console.log( boyTom );
 interface MathFn{
     ( n01:number, n02:number ):number;
 }
-let getSum:MathFn = function( n01:number, n02:number ):number{
+let getSumFn:MathFn = function( n01:number, n02:number ):number{
     return n01 + n02;
 }
 let getProduct:MathFn = function( n01:number, n02:number ):number{
     return n01 * n02;
 }
-console.log( getSum(3,3) );
+console.log( getSumFn(3,3) );
 console.log( getProduct(3,3) );

@@ -1,4 +1,3 @@
-import { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } from "constants";
 
 // ▼用 function 
 function getSum(n01:number, n02:number):number{
