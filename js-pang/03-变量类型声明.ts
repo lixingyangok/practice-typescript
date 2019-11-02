@@ -1,6 +1,12 @@
+import { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } from "constants";
+
 // ▼声明时标注变量类型
 let pName:string = 'Tom';
 let age:number = 18;
+let info:object = {};  //对象，数组皆可
+info = [];
+
+
 let isPartyMember:boolean = false;
 let other:void = undefined; //只能放undefined
 let other1:undefined = undefined; //只能放undefined
@@ -32,3 +38,13 @@ msg = 18;
 console.log(msg);
 msg = '一百';
 console.log(msg);
+
+
+// ------------------------------
+// 类型断言
+let oneVal:any = 'I like programing';
+let twoVal:string = (<string>oneVal).substr(0, 6);
+let twoVal_:string = ( oneVal as string).substr(0, 6);
+console.log( twoVal, twoVal_ );
+
+

@@ -20,4 +20,15 @@ function getNames() {
     result = result.replace(/、$/, '');
     return result;
 }
-console.log(getNames('张三', '李四'));
+console.log(getNames('张三', '李四') //这里参数只能传入字符串，否则报错
+);
+function showErrow(msg) {
+    throw new Error('抛出错误：' + msg); //比return力度大
+    console.log('抛出错误02'); //执行不到
+}
+// showErrow('请注意');
+function giveMeObj(params) {
+    console.log(Object.keys(params) || '无');
+}
+giveMeObj({ a: 1, b: 2 });
+giveMeObj([1, 2, 3]);

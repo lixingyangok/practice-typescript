@@ -1,8 +1,14 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // ▼声明时标注变量类型
 var pName = 'Tom';
 var age = 18;
+var info = {}; //对象，数组皆可
+info = [];
 var isPartyMember = false;
+var other = undefined; //只能放undefined
+var other1 = undefined; //只能放undefined
+var other2 = null; //只能放null
 console.log('个人信息：', pName, age, isPartyMember);
 // ▼如果没有标注，但有初始变量，会进行类型推导
 var numberVariable = 0;
@@ -35,3 +41,9 @@ msg = 18;
 console.log(msg);
 msg = '一百';
 console.log(msg);
+// ------------------------------
+// 类型断言
+var oneVal = 'I like programing';
+var twoVal = oneVal.substr(0, 6);
+var twoVal_ = oneVal.substr(0, 6);
+console.log(twoVal, twoVal_);

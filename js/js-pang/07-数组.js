@@ -20,4 +20,6 @@ var arr05 = [1, 'ok'];
 // arr05 = [ 'ok', 1 ]; //报错，数组成员顺序不正确
 // ▼任意类型的数组
 var arr06 = [1, 'ok', true];
+var arr07 = [1, 'ok', true];
 arr06.push(alert);
+arr07.push(alert);

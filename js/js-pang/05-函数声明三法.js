@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 // ▼用 function 
 function getSum(n01, n02) {
     return n01 + n02;
