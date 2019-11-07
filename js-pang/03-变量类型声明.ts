@@ -1,5 +1,3 @@
-import { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } from "constants";
-
 // ▼声明时标注变量类型
 let pName:string = 'Tom';
 let age:number = 18;
@@ -28,9 +26,17 @@ var stringVariable = '';
 
 // ▼枚举
 enum season { spring, summer, fall, winter };
-console.log( '季节枚举：', season );
 enum sex { man="男", woman="女" };
+enum sex02 { '男' }; // 枚举值可以是中文
+// enum sex03 { 1, 2 }; //枚举值不可为数字
+
+let zhang01:sex;
+// zhang01 = ''; //非法赋值
+zhang01 = sex.man; //合法赋值
+
+console.log( '季节枚举：', season );
 console.log( '性别枚举：', sex );
+console.log( 'zhang01：', zhang01 );
 
 // ▼任意型
 let msg:any;

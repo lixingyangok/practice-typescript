@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 // ▼声明时标注变量类型
 var pName = 'Tom';
 var age = 18;
@@ -27,14 +26,24 @@ var season;
     season[season["winter"] = 3] = "winter";
 })(season || (season = {}));
 ;
-console.log('季节枚举：', season);
 var sex;
 (function (sex) {
     sex["man"] = "\u7537";
     sex["woman"] = "\u5973";
 })(sex || (sex = {}));
 ;
+var sex02;
+(function (sex02) {
+    sex02[sex02["\u7537"] = 0] = "\u7537";
+})(sex02 || (sex02 = {}));
+; // 枚举值可以是中文
+// enum sex03 { 1, 2 }; //枚举值不可为数字
+var zhang01;
+// zhang01 = ''; //非法赋值
+zhang01 = sex.man; //合法赋值
+console.log('季节枚举：', season);
 console.log('性别枚举：', sex);
+console.log('zhang01：', zhang01);
 // ▼任意型
 var msg;
 msg = 18;
