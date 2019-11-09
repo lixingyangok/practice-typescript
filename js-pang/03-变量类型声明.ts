@@ -54,3 +54,8 @@ let twoVal_:string = ( oneVal as string).substr(0, 6);
 console.log( twoVal, twoVal_ );
 
 
+// -------------
+// ▼只读数据
+let sevenDays:ReadonlyArray<number> = [1,2,3,4,5,6,7];
+console.log( sevenDays[0] );
+// sevenDays.push(8); //报错，不可修改

@@ -56,3 +56,8 @@ var oneVal = 'I like programing';
 var twoVal = oneVal.substr(0, 6);
 var twoVal_ = oneVal.substr(0, 6);
 console.log(twoVal, twoVal_);
+// -------------
+// ▼只读数据
+var sevenDays = [1, 2, 3, 4, 5, 6, 7];
+console.log(sevenDays[0]);
+// sevenDays.push(8); //报错，不可修改

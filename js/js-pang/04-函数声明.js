@@ -32,3 +32,9 @@ function giveMeObj(params) {
 }
 giveMeObj({ a: 1, b: 2 });
 giveMeObj([1, 2, 3]);
+function showSomeone(pInfo) {
+    console.log(pInfo.name + "\u6765\u4E86\uFF0C\u4ED6\u4ECA\u5E74" + pInfo.age + "\u5C81");
+}
+showSomeone({ name: 'tom', age: 18 }); //正常传参，不报错
+// showSomeone( {name:'tom'} ); //传参错误，报错
+showSomeone({ name: 'tom' }); //添加断言，不报错（忽悠当前参数符合 pInfo 这个接口

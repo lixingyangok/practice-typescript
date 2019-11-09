@@ -32,3 +32,17 @@ function giveMeObj( params:object ):void{
 }
 giveMeObj({ a:1, b:2 }); 
 giveMeObj( [1,2,3] );
+
+
+// ▼参数断言
+interface pInfo{
+    name: string,
+    age: number,
+}
+function showSomeone( pInfo:pInfo ) {
+    console.log(`${pInfo.name}来了，他今年${pInfo.age}岁`);
+}
+showSomeone({name:'tom', age:18}); //正常传参，不报错
+// showSomeone( {name:'tom'} ); //传参错误，报错
+showSomeone( {name:'tom'}  as pInfo ); //添加断言，不报错（忽悠当前参数符合 pInfo 这个接口
+
