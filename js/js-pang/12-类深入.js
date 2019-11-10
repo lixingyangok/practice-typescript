@@ -25,4 +25,27 @@ p01.toIntroduce(); // public 方法随意调用
 // p01.sayAge(); // private 方法只能在类本身调用
 p01.sex += '——';
 p01.toIntroduce();
-// p01.name += '——'; // 只读属性不可修改
+var xMan = /** @class */ (function () {
+    function xMan(pInfo) {
+        this.name = pInfo.name;
+        this.age = pInfo.age;
+        this.skills = pInfo.skills || [];
+    }
+    xMan.prototype.becomeOlder = function () {
+        this.age++;
+        console.log('现在年龄：', this.age);
+    };
+    return xMan;
+}());
+var xMan01 = new xMan({
+    name: 'wolf',
+    age: 100,
+    skills: ['recover'],
+});
+var xMan02 = new xMan({
+    name: 'bird',
+    age: 20,
+});
+console.log(xMan01.age);
+xMan01.becomeOlder();
+console.log(xMan01.age);
