@@ -19,7 +19,6 @@ toLogHuman(boyTom);
 toLogHuman({ name: 'Sara', sex: '女' });
 
 
-
 interface MathFn {
 	(n01: number, n02: number): number;
 }
@@ -33,6 +32,24 @@ let getProduct: MathFn = function (n01: number, n02: number): number {
 console.log(getSumFn(3, 3));
 console.log(getProduct(3, 3));
 
+
+// ▼约束一个类
+interface classInterface{
+	nowTime: Date;
+	getMyTime():void;
+};
+
+class TimeClass implements classInterface{
+	nowTime: Date; //★没这句就报错
+	constructor(){
+		this.nowTime = new Date(); //★没这句就报错
+		this.getMyTime();
+	}
+	getMyTime(){  //★没这句就报错
+		console.log('★时间★', this.nowTime.toLocaleString())
+	}
+}
+new TimeClass();
 
 // ▼定义一个接口（这个接口不会被编译出来
 interface personX {

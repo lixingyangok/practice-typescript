@@ -19,6 +19,18 @@ var getProduct = function (n01, n02) {
 };
 console.log(getSumFn(3, 3));
 console.log(getProduct(3, 3));
+;
+var TimeClass = /** @class */ (function () {
+    function TimeClass() {
+        this.nowTime = new Date(); //★没这句就报错
+        this.getMyTime();
+    }
+    TimeClass.prototype.getMyTime = function () {
+        console.log('★时间★', this.nowTime.toLocaleString());
+    };
+    return TimeClass;
+}());
+new TimeClass();
 var tom = {
     name: 'tom',
     sex: 0,
