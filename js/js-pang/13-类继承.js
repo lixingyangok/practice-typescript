@@ -19,22 +19,27 @@ var Man = /** @class */ (function () {
     Man.prototype.sayName = function () {
         console.log("I'm " + this.name);
     };
+    Man.prototype.getUpperName = function () {
+        return this.name.toUpperCase();
+    };
     return Man;
 }());
 var Singer = /** @class */ (function (_super) {
     __extends(Singer, _super);
-    // song: string;
-    function Singer(name) {
-        return _super.call(this, name) || this;
+    function Singer(name, songs) {
+        var _this = _super.call(this, name) || this;
+        _this.songs = songs;
+        return _this;
     }
     Singer.prototype.toSing = function () {
-        console.log("I can sing\uFF1A " + 'National Anthem');
+        console.log(this.getUpperName());
+        console.log("I can sing\uFF1A " + this.songs.length + " song/s");
     };
     return Singer;
 }(Man));
 var man01 = new Man('Tom');
 man01.sayName();
 // 
-var singer01 = new Singer('Sara');
+var singer01 = new Singer('Sara', ['song01']);
 singer01.sayName();
 singer01.toSing();

@@ -6,15 +6,20 @@ class Man{
     sayName(){
         console.log(`I'm ${this.name}`);
     }
+    getUpperName(){
+        return this.name.toUpperCase();
+    }
 }
 
 class Singer extends Man{
-    // song: string;
-    constructor( name:string ){
-        super( name );
+    songs: string[];
+    constructor( name:string, songs:string[] ){
+        super( name ); //把父类的信息给父级
+        this.songs = songs;
     }
     toSing(){
-        console.log(`I can sing： ${ 'National Anthem' }`);
+        console.log( this.getUpperName() );
+        console.log(`I can sing： ${ this.songs.length } song/s`);
     }
 }
 
@@ -22,6 +27,6 @@ let man01 = new Man( 'Tom' );
 man01.sayName();
 
 // 
-let singer01 = new Singer( 'Sara' );
+let singer01 = new Singer( 'Sara', ['song01'] );
 singer01.sayName();
 singer01.toSing();
