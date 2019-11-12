@@ -1,5 +1,5 @@
 class Person{
-    public sex:string;
+    sex:string; //默认是public
     private age:number; 
     protected readonly name:string; //只读
 
@@ -8,7 +8,7 @@ class Person{
         this.age = age;
         this.sex = sex;
     }
-    public toIntroduce(){
+    toIntroduce(){
         console.log( this.name, this.age, this.sex );
     }
     protected sayName(){
@@ -23,8 +23,8 @@ class Person{
 let p01 = new Person('Gaga', 18, 'woman')
 
 console.log( '性别：', p01.sex ); //public 属性可随意访问
-// console.log( '姓名：', p01.name ); //protected 只能在类本身、子类访问
-// console.log( '年龄：', p01.age ); //private 只能在类本身访问
+// console.log( '姓名：', p01.name ); //报错：protected 只能在类本身、子类访问
+// console.log( '年龄：', p01.age ); //报错：private 只能在类本身访问
 
 p01.toIntroduce(); // public 方法随意调用
 // p01.sayName(); // protected 方法只能在类本身、子类调用
