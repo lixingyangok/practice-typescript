@@ -1,3 +1,5 @@
+import { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } from "constants";
+
 class Person{
     sex:string; //默认是public
     private age:number; 
@@ -67,3 +69,19 @@ let xMan02 = new xMan({
 console.log(xMan01.age);
 xMan01.becomeOlder();
 console.log(xMan01.age);
+
+class Animal{
+    constructor(
+        public name: string,
+        readonly sex: number,
+        public age: number,
+    ){
+        console.log('my name is: ', this.name);
+        // ▲以上是简写形式，可省略下方的代码
+        // this.name = name;
+        // this.sex = sex;
+        // this.age = age;
+    }
+}
+let dog = new Animal('dog', 1, 18);
+console.log(dog);
