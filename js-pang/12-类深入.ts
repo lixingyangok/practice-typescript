@@ -85,3 +85,29 @@ class Animal{
 }
 let dog = new Animal('dog', 1, 18);
 console.log(dog);
+
+
+// get, set
+class SomeOne{
+    // private _nameStr: string;
+    constructor(
+        private _nameStr: string,
+    ){
+        // 
+    }
+    set nameStr( newName:string ){
+        if(newName.length>3){
+            console.log('非法赋值');
+            return;
+        }
+        this._nameStr = newName;
+    }
+    get nameStr():string{
+        return this._nameStr;
+    }
+}
+let MrLi = new SomeOne(``);
+MrLi.nameStr = '山口百惠';
+console.log( 'nameStr：', MrLi.nameStr );
+MrLi.nameStr = '张娜拉';
+console.log( 'nameStr：', MrLi.nameStr );

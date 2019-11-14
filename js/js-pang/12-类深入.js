@@ -65,3 +65,31 @@ var Animal = /** @class */ (function () {
 }());
 var dog = new Animal('dog', 1, 18);
 console.log(dog);
+// get, set
+var SomeOne = /** @class */ (function () {
+    // private _nameStr: string;
+    function SomeOne(_nameStr) {
+        this._nameStr = _nameStr;
+        // 
+    }
+    Object.defineProperty(SomeOne.prototype, "nameStr", {
+        get: function () {
+            return this._nameStr;
+        },
+        set: function (newName) {
+            if (newName.length > 3) {
+                console.log('非法赋值');
+                return;
+            }
+            this._nameStr = newName;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return SomeOne;
+}());
+var MrLi = new SomeOne("");
+MrLi.nameStr = '山口百惠';
+console.log('nameStr：', MrLi.nameStr);
+MrLi.nameStr = '张娜拉';
+console.log('nameStr：', MrLi.nameStr);
