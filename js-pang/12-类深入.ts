@@ -1,17 +1,19 @@
-import { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } from "constants";
 
 class Person{
-    sex:string; //默认是public
-    private age:number; 
     protected readonly name:string; //只读
+    private age:number; //私有
+    sex:string; //默认是public
+    // static likes: string[]; //静态
+    static likes = ['reading', 'singing']; //静态
 
-    constructor( name:string, age:number, sex:string  ){
+    constructor( name:string, age:number, sex:string, likes:string[]  ){
         this.name = name;
         this.age = age;
         this.sex = sex;
     }
     toIntroduce(){
         console.log( this.name, this.age, this.sex );
+        console.log( '内部用类的名称调用 Person.likes：', Person.likes ); //静态属性不能用 this 调用
     }
     protected sayName(){
         console.log( this.name );
@@ -22,11 +24,13 @@ class Person{
 }
 
 
-let p01 = new Person('Gaga', 18, 'woman')
+let p01 = new Person( 'Gaga', 18, 'woman', ['reading', 'singing'] ); //['reading', 'singing']
+
 
 console.log( '性别：', p01.sex ); //public 属性可随意访问
 // console.log( '姓名：', p01.name ); //报错：protected 只能在类本身、子类访问
 // console.log( '年龄：', p01.age ); //报错：private 只能在类本身访问
+console.log( '外部调用 likes：', Person.likes ); //静态属性不能用 this 调用
 
 p01.toIntroduce(); // public 方法随意调用
 // p01.sayName(); // protected 方法只能在类本身、子类调用
@@ -95,6 +99,7 @@ class SomeOne{
     ){
         // 
     }
+    // 如果只有 get，没有相应的set，那get将是只读属性
     set nameStr( newName:string ){
         if(newName.length>3){
             console.log('非法赋值');
@@ -102,6 +107,7 @@ class SomeOne{
         }
         this._nameStr = newName;
     }
+
     get nameStr():string{
         return this._nameStr;
     }
