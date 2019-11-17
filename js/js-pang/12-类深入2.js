@@ -42,3 +42,25 @@ var dancer02 = new NationalDancer('Mr Wang', 18);
 dancer01.dance();
 dancer01.sing();
 // dancer02.sing(); // 标注类型为 Dancer 是不能调用 NationalDancer 的专属方法的, 报错
+// ————————————————————————————————————————————————————————
+// ▼泛型类
+var Info = /** @class */ (function () {
+    function Info(code) {
+        this.code = code;
+    }
+    Info.prototype.sayCode = function () {
+        console.log(this.code);
+        return this.code;
+    };
+    return Info;
+}());
+var code01 = new Info(123);
+var code02 = new Info('abc');
+code01.sayCode();
+code02.sayCode();
+// ▼指定参数必需有 length 属性
+function getLength(params) {
+    console.log(params + "\u957F\u5EA6\uFF1A ", params.length);
+}
+getLength('asdf');
+getLength([1, 2, 3]);

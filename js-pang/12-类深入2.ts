@@ -34,3 +34,39 @@ dancer01.sing();
 
 // dancer02.sing(); // 标注类型为 Dancer 是不能调用 NationalDancer 的专属方法的, 报错
 
+
+
+// ————————————————————————————————————————————————————————
+
+// ▼泛型类
+class Info<tp> {
+	code: tp;
+	constructor( code:tp, ){
+		this.code = code;
+	}
+	sayCode():tp{
+		console.log( this.code );
+		return this.code;
+	}
+}
+
+
+let code01 = new Info( 123 );
+let code02 = new Info( 'abc' );
+
+code01.sayCode();
+code02.sayCode();
+
+// 
+
+// 
+interface haveLength {
+	length: number,
+}
+// ▼指定参数必需有 length 属性
+function getLength<tp extends haveLength>( params:tp ):void {
+	console.log( `${params}长度： `, params.length )
+}
+
+getLength( 'asdf' );
+getLength( [1,2,3] );
