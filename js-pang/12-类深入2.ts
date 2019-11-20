@@ -70,3 +70,11 @@ function getLength<tp extends haveLength>( params:tp ):void {
 
 getLength( 'asdf' );
 getLength( [1,2,3] );
+
+
+// ▼验证二参的 tp02 应为一参的一个键
+function getValByKey< tp, tp02 extends keyof tp >( obj:tp, key:tp02 ):void {
+	console.log( 'getValByKey：', obj[key] );
+}
+getValByKey('abc', 'length'); //abc 具备 length 属性，通过
+// getValByKey( 18, 'length'); // 18 不具备 length 属性，报错

@@ -13,8 +13,9 @@ console.log('个人信息：', pName, age, isPartyMember);
 var numberVariable = 0;
 var stringVariable = '';
 // ▼非法调用方法会报错（在编译阶段报错）因为此类型的变量没有其调用的方法
-// numberVariable.replace(0, 99); 
-// stringVariable.toFixed(3); 
+// numberVariable.replace(0, 99);
+// stringVariable.toFixed(3);
+// (stringVariable as number).toFixed(3); //尝试用断言防止报错，没成功
 // ▼非法赋值也会报错
 // numberVariable='18';
 // ▼枚举

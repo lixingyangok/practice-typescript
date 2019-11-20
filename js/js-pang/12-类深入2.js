@@ -64,3 +64,9 @@ function getLength(params) {
 }
 getLength('asdf');
 getLength([1, 2, 3]);
+// ▼验证二参的 tp02 应为一参的一个键
+function getValByKey(obj, key) {
+    console.log('getValByKey：', obj[key]);
+}
+getValByKey('abc', 'length'); //abc 具备 length 属性，通过
+// getValByKey( 18, 'length'); // 18 不具备 length 属性，报错
