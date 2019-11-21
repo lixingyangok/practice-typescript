@@ -4,8 +4,10 @@ var pName = 'Tom';
 var age = 18;
 var info = {}; //对象，数组皆可
 info = [];
+// info = null; //报错
 var isPartyMember = false;
 var other = undefined; //只能放undefined
+// other = null; //报错
 var other1 = undefined; //只能放undefined
 var other2 = null; //只能放null
 console.log('个人信息：', pName, age, isPartyMember);
