@@ -1,12 +1,15 @@
 // ▼声明时标注变量类型
 let pName:string = 'Tom';
-let age:number = 18;
+let age:number = 18; 
 let info:object = {};  //对象，数组皆可
 info = [];
+// info = null; //报错
+
 
 
 let isPartyMember:boolean = false;
 let other:void = undefined; //只能放undefined
+// other = null; //报错
 let other1:undefined = undefined; //只能放undefined
 let other2:null = null;  //只能放null
 
