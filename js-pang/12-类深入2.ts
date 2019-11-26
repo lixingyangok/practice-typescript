@@ -37,8 +37,7 @@ dancer01.sing();
 
 
 // ————————————————————————————————————————————————————————
-
-// ▼泛型类
+// ▼泛型类、 泛型
 class Info<tp> {
 	code: tp;
 	constructor( code:tp, ){
@@ -51,8 +50,8 @@ class Info<tp> {
 }
 
 
-let code01 = new Info( 123 );
-let code02 = new Info( 'abc' );
+let code01 = new Info<number>( 123 ); //指定泛型
+let code02 = new Info( '123' ); //不指定
 
 code01.sayCode();
 code02.sayCode();

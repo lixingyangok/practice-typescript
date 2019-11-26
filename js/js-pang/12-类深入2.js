@@ -43,7 +43,7 @@ dancer01.dance();
 dancer01.sing();
 // dancer02.sing(); // 标注类型为 Dancer 是不能调用 NationalDancer 的专属方法的, 报错
 // ————————————————————————————————————————————————————————
-// ▼泛型类
+// ▼泛型类、 泛型
 var Info = /** @class */ (function () {
     function Info(code) {
         this.code = code;
@@ -54,8 +54,8 @@ var Info = /** @class */ (function () {
     };
     return Info;
 }());
-var code01 = new Info(123);
-var code02 = new Info('abc');
+var code01 = new Info(123); //指定泛型
+var code02 = new Info('123'); //不指定
 code01.sayCode();
 code02.sayCode();
 // ▼指定参数必需有 length 属性
